@@ -38,8 +38,16 @@ export default function Home() {
               </p>
               <div className="banner__btn pill-btn">Get Started</div>
             </div>
-            <img src="../images/banner-desktop-img.svg" alt="working-illustration" className="banner__img desktop" />
-            <img src="../images/banner-mobile-img.svg " alt="working-illustration" className="banner__img mobile" />
+            <img
+              src="../images/banner-desktop-img.svg"
+              alt="working-illustration"
+              className="banner__img desktop"
+            />
+            <img
+              src="../images/banner-mobile-img.svg "
+              alt="working-illustration"
+              className="banner__img mobile"
+            />
           </div>
         </header>
         <main className="main">
@@ -59,7 +67,10 @@ export default function Home() {
               <div className="benfit">
                 <div className="benfit__top">
                   <div className="benfit__circle">
-                    <img src="../images/icon-brand-recognition.svg" alt="avatar" />
+                    <img
+                      src="../images/icon-brand-recognition.svg"
+                      alt="avatar"
+                    />
                   </div>
                 </div>
                 <div className="benfit__bottom">
@@ -74,7 +85,10 @@ export default function Home() {
               <div className="benfit">
                 <div className="benfit__top">
                   <div className="benfit__circle">
-                    <img src="../images/icon-detailed-records.svg" alt="avatar" />
+                    <img
+                      src="../images/icon-detailed-records.svg"
+                      alt="avatar"
+                    />
                   </div>
                 </div>
                 <div className="benfit__bottom">
@@ -89,7 +103,10 @@ export default function Home() {
               <div className="benfit">
                 <div className="benfit__top">
                   <div className="benfit__circle">
-                    <img src="../images/icon-fully-customizable.svg" alt="avatar" />
+                    <img
+                      src="../images/icon-fully-customizable.svg"
+                      alt="avatar"
+                    />
                   </div>
                 </div>
                 <div className="benfit__bottom">
@@ -108,27 +125,31 @@ export default function Home() {
           </div>
         </main>
         <footer className="footer">
-          <img src="" alt="" className="img" />
-          <div className="menu">
-            <div className="nav">
-              <div className="links">
-                <h4 className="link header">Features</h4>
-                <p className="link">Analytics</p>
-                <p className="link">Link Shortening</p>
-                <p className="link">Branded Links</p>
+          <img
+            src="../images/footer-logo.svg"
+            alt="logo"
+            className="footer__logo"
+          />
+          <div className="footer__menu">
+            <div className="footer__nav">
+              <div className="footer__links">
+                <h4 className="footer__link footer__link--header">Features</h4>
+                <p className="footer__link">Analytics</p>
+                <p className="footer__link">Link Shortening</p>
+                <p className="footer__link">Branded Links</p>
               </div>
-              <div className="links">
-                <h4 className="link header">Resources</h4>
-                <p className="link">Support</p>
-                <p className="link">Blog</p>
-                <p className="link">Developers</p>
+              <div className="footer__links">
+                <h4 className="footer__link footer__link--header">Resources</h4>
+                <p className="footer__link">Support</p>
+                <p className="footer__link">Blog</p>
+                <p className="footer__link">Developers</p>
               </div>
-              <div className="links">
-                <h4 className="link header">Company</h4>
-                <p className="link">About</p>
-                <p className="link">Our Team</p>
-                <p className="link">Careers</p>
-                <p className="link">Contact</p>
+              <div className="footer__links">
+                <h4 className="footer__link footer__link--header">Company</h4>
+                <p className="footer__link">About</p>
+                <p className="footer__link">Our Team</p>
+                <p className="footer__link">Careers</p>
+                <p className="footer__link">Contact</p>
               </div>
             </div>
             <div className="icons"></div>
