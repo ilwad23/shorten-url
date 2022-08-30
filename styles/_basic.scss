@@ -24,3 +24,18 @@ a {
     background: black;
   }
 }
+
+html, body, .container {
+    width: 100vw;
+    height: 100vh;
+}
+@media (min-width:401px) {
+ .mobile{
+  display: none;
+ }
+}
+@media (max-width:400px) {
+ .desktop{
+  display: none;
+ }
+}
