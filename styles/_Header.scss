@@ -1,3 +1,80 @@
-.o3 {
-   display: none;
+@use "./utils" as *;
+
+// * Header
+.header {
+   width: fit-content;
+   min-height: 100vh;
+   height: max-content;
+   padding: s(55) 0;
+   display: grid;
+   gap: s(70);
+}
+// * Nav
+.nav {
+   display: flex;
+   align-items: center;
+   height: s(40);
+   padding: 0 clamp(s(30), 11vw, s(166));
+   
+   &__logo {
+      padding-right: clamp(s(25), 4vw, s(70));
+   }
+   &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: s(10);
+    gap: s(30);
+    cursor: pointer;
+    p:hover, p:focus {
+      color: $dark-text;
+    }
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: s(30);
+    width: min-content;
+  }
+}
+
+// * Banner
+.banner {
+  padding-top: 1px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-left: clamp(s(30), 11vw, s(166));
+  height: 100%;
+  gap: clamp(s(30), 11vw, s(100));
+  &__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: clamp(s(15), 1.5vw, s(35));
+  }
+  &__title {
+    font-size: clamp($text-400, 5vw, $text-500);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  &__para {
+    font-size: clamp($text-150, $text-300);
+    padding-right: clamp(s(3), 4vw, s(80));
+    font-weight: 500;
+    color: $light-text;
+  }
+  &__img {
+    flex: 1;
+    width: 30vw;
+  }
 }
