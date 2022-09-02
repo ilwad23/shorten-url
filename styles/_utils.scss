@@ -1,0 +1,42 @@
+// * --- Import
+@use "sass:math" as m;
+// * --- Function
+@function s($size, $em: 16) {
+  @return m.div($size, $em) + em;
+}
+@function vw($size) {
+  @return m.div($size, $vw) + vw;
+}
+// * --- Variables
+// * -- font size
+$text-100: s(15);
+$text-200: s(20);
+$text-300: s(22);
+$text-400: s(40);
+$text-500: s(75);
+// * -- colors
+$light-box: hsl(180, 66%, 49%);
+$dark-box: hsl(257, 27%, 26%);
+$light-bg: hsl(0, 0%, 75%);
+$light-text: hsl(257, 7%, 63%);
+$dark-bg: hsla(266, 10%, 14%, 1);
+$dark-text: hsla(255, 11%, 22%, 1);
+$btn-hover: hsla(180, 55%, 75%, 1);
+$error: hsl(0, 87%, 67%);
+// * --- Mixins
+@mixin btn-pill() {
+  display: grid;
+  place-items: center;
+  padding: s(13) s(24);
+  border-radius: s(100);
+  background-color: $light-box;
+  width: max-content;
+
+  p {
+    color: white;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: $btn-hover;
+  }
+}
