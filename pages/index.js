@@ -19,32 +19,36 @@ export default function Home() {
             />
             <div className="nav__menu">
               <div className="nav__links">
-                <div className="nav__link">Features</div>
-                <div className="nav__link">Pricing</div>
-                <div className="nav__link">Resources</div>
+                <p className="nav__link">Features</p>
+                <p className="nav__link">Pricing</p>
+                <p className="nav__link">Resources</p>
               </div>
               <div className="nav__account">
                 <p className="nav__link nav__login">Login</p>
-                <div className="nav__btn pill-btn">Sign In</div>
+                <div className="nav__btn pill-btn">
+                  <p className="nav__link">Sign In</p>
+                </div>
               </div>
             </div>
           </nav>
           <div className="banner">
             <div className="banner__info">
               <h1 className="banner__title ">More than just shorter links</h1>
-              <p className="banner__para">
+              <h3 className="banner__para">
                 Build your brand’s recognition and get detailed insights on how
                 your links are performing.
-              </p>
-              <div className="banner__btn pill-btn">Get Started</div>
+              </h3>
+              <div className="banner__btn pill-btn">
+                <p>Get Started</p>
+              </div>
             </div>
             <img
-              src="../images/banner-desktop-img.svg"
+              src="../images/header-desktop-img.svg"
               alt="working-illustration"
               className="banner__img desktop"
             />
             <img
-              src="../images/banner-mobile-img.svg "
+              src="../images/header-mobile-img.svg"
               alt="working-illustration"
               className="banner__img mobile"
             />
@@ -52,8 +56,43 @@ export default function Home() {
         </header>
         <main className="main">
           <div className="shorten">
-            <input type="text" placeholder="Shorten a link here" />
-            <div className="box-btn">Shorten it</div>
+            <div className="shortenURL__form">
+              <div className="shortenURL__input">
+
+                <input
+                className="shortenURL__input--field"
+                type="text"
+                placeholder="Shorten a link here"
+                />
+                <p className="shortenURL__error">please add a link</p>
+                </div>
+              <div className="shortenURL__btn box-btn">
+                <p>Shorten it</p>
+              </div>
+            </div>
+           <div className="shortenURL__list">
+            <div className="shortenURL__item">
+              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
+              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
+              <div className="shortenURL__btn box-btn">
+                <p>Copy</p>
+              </div>
+            </div>
+            <div className="shortenURL__item">
+              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
+              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
+              <div className="shortenURL__btn box-btn">
+                <p>Copy</p>
+              </div>
+            </div>
+            <div className="shortenURL__item">
+              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
+              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
+              <div className="shortenURL__btn box-btn">
+                <p>Copy</p>
+              </div>
+            </div>
+           </div> 
           </div>
           <div className="benefits">
             <div className="benefits__hook">
@@ -74,7 +113,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="benfit__bottom">
-                  <h4 className="benfit__title">Brand Recognition</h4>
+                  <h3 className="benfit__title">Brand Recognition</h3>
                   <p className="benfit__para">
                     Boost your brand recognition with each click. Generic links
                     don’t mean a thing. Branded links help instil confidence in
@@ -92,7 +131,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="benfit__bottom">
-                  <h4 className="benfit__title">Detailed Records</h4>
+                  <h3 className="benfit__title">Detailed Records</h3>
                   <p className="benfit__para">
                     Gain insights into who is clicking your links. Knowing when
                     and where people engage with your content helps inform
@@ -110,7 +149,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="benfit__bottom">
-                  <h4 className="benfit__title">Fully Customizable</h4>
+                  <h3 className="benfit__title">Fully Customizable</h3>
                   <p className="benfit__para">
                     Improve brand awareness and content discoverability through
                     customizable links, supercharging audience engagement.
@@ -121,7 +160,9 @@ export default function Home() {
           </div>
           <div className="CTA">
             <h2 className="CTA__tilte">Boost your links today</h2>
-            <div className="pill-btn">Get Started</div>
+            <div className="CTA__btn pill-btn">
+              <p>Get Started</p>
+            </div>
           </div>
         </main>
         <footer className="footer">
@@ -133,26 +174,47 @@ export default function Home() {
           <div className="footer__menu">
             <div className="footer__nav">
               <div className="footer__links">
-                <h4 className="footer__link footer__link--header">Features</h4>
+                <p className="footer__link footer__link--header">Features</p>
                 <p className="footer__link">Analytics</p>
                 <p className="footer__link">Link Shortening</p>
                 <p className="footer__link">Branded Links</p>
               </div>
               <div className="footer__links">
-                <h4 className="footer__link footer__link--header">Resources</h4>
+                <p className="footer__link footer__link--header">Resources</p>
                 <p className="footer__link">Support</p>
                 <p className="footer__link">Blog</p>
                 <p className="footer__link">Developers</p>
               </div>
               <div className="footer__links">
-                <h4 className="footer__link footer__link--header">Company</h4>
+                <p className="footer__link footer__link--header">Company</p>
                 <p className="footer__link">About</p>
                 <p className="footer__link">Our Team</p>
                 <p className="footer__link">Careers</p>
                 <p className="footer__link">Contact</p>
               </div>
             </div>
-            <div className="icons"></div>
+            <div className="footer__icons">
+              <img
+                src="../images/icon-facebook.svg"
+                alt="facebook"
+                className="footer__logo"
+              />
+              <img
+                src="../images/icon-twitter.svg"
+                alt="twitter"
+                className="footer__logo"
+              />
+              <img
+                src="../images/icon-pinterest.svg"
+                alt="pinterest"
+                className="footer__logo"
+              />
+              <img
+                src="../images/icon-instagram.svg"
+                alt="instagram"
+                className="footer__logo"
+              />
+            </div>
           </div>
         </footer>
       </div>
