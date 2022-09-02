@@ -6,7 +6,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+div {
+  height: max-content;
+  width: 100%;
+}
 /* Remove default margin */
 body,
 h1,

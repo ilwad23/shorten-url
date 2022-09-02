@@ -10,6 +10,7 @@
 // * --- Variables
 // * -- font size
 $text-100: s(15);
+$text-150: s(18);
 $text-200: s(20);
 $text-300: s(22);
 $text-400: s(40);
@@ -31,7 +32,7 @@ $error: hsl(0, 87%, 67%);
   border-radius: s(100);
   background-color: $light-box;
   width: max-content;
-
+cursor: pointer;
   p {
     color: white;
   }
