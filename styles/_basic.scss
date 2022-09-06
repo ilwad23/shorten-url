@@ -5,6 +5,7 @@
   .mobile {
     display: none;
   }
+}
   h2 {
     font-size: $text-400;
     font-weight: 700;
@@ -22,7 +23,6 @@
     font-weight: 700;
     color: $light-text;
   }
-}
 @media (max-width: 700px) {
   h1 {
     font-size: 1px;
@@ -38,9 +38,6 @@ body,
   height: 100vh;
   font-family: "Poppins", cursive;
   color: $dark-text;
-}
-.footer__icons {
-  background: #000;
 }
 
 .pill-btn {

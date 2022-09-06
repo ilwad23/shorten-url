@@ -4,10 +4,6 @@
 @function s($size, $em: 16) {
   @return m.div($size, $em) + em;
 }
-// @function vw($size) {
-//   $v
-//   @return m.div($size, $vw) + vw;
-// }
 // * --- Variables
 // * -- font size
 $text-100: s(15);
@@ -19,13 +15,18 @@ $text-500: s(75);
 // * -- colors
 $light-box: hsl(180, 66%, 49%);
 $dark-box: hsl(257, 27%, 26%);
-$light-bg: hsl(0, 0%, 75%);
+$light-bg: #f0f1f6;
 $light-text: hsl(257, 7%, 63%);
 $dark-bg: hsla(266, 10%, 14%, 1);
 $dark-text: hsla(255, 11%, 22%, 1);
 $btn-hover: hsla(180, 55%, 75%, 1);
+$footer-hover: hsla(181, 65%, 53%, 1);
 $error: hsl(0, 87%, 67%);
+// * -- spacing
+$container: clamp(s(20), 11vw, s(166));
+$container-tablet: clamp(s(20), 1.3vw, s(40));
 // * --- Mixins
+// * -- specific
 @mixin btn-pill() {
   display: grid;
   place-items: center;
@@ -35,10 +36,59 @@ $error: hsl(0, 87%, 67%);
   width: max-content;
   cursor: pointer;
   p {
-    color: white;
+    color: $light-bg;
+    font-weight: 700;
   }
   &:hover,
   &:focus-visible {
     background-color: $btn-hover;
+  }
+}
+@mixin container($y: 0, $r: false) {
+  $rd2: $container;
+  $rt2: $container-tablet;
+  @if $r {
+    $rd2: 0;
+    $rt2: 0;
+  }
+  padding: s($y) $container;
+  padding-right: $rd2;
+  @include tablet {
+    padding: s($y) $container-tablet;
+    padding-right: $rt2;
+  }
+}
+// * -- displays
+@mixin flex($align: center, $justify: space-between, $dir: row, $flex: 0) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $dir;
+  flex: $flex;
+}
+// * -- break pointer
+@mixin up-desktop {
+  @media all and (min-width: 951px) {
+    @content;
+  }
+}
+@mixin down-desktop {
+  @media all and (max-width: 950px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media all and (max-width: 950px) and (min-width: 481px) {
+    @content;
+  }
+}
+@mixin up-mobile {
+  @media all and (min-width: 481px) {
+    @content;
+  }
+}
+@mixin down-mobile {
+  @media all and (max-width: 480px) {
+    @content;
   }
 }

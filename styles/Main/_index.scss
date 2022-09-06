@@ -1,0 +1,32 @@
+@use "../utils" as *;
+@forward "./shorten";
+@forward "./benefits";
+
+.main {
+  background-color: $light-bg;
+}
+
+.hook {
+  @include flex($dir: column);
+  text-align: center;
+  padding: s(90) 0 s(55);
+  gap: 35px;
+  &__para {
+    font-size: $text-150;
+    font-weight: 500;
+    width: s(500);
+  }
+}
+
+.CTA {
+  background-color: $dark-box;
+  background-image: url(/images/bg-boost-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  color: $light-bg;
+  display: grid;
+  place-items: center;
+  margin-top: s(70);
+  padding: s(60) 0 s(40);
+  gap: s(40);
+}

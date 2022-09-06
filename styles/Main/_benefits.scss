@@ -1,0 +1,60 @@
+@use "../utils" as *;
+
+// * Benefits
+.benefits {
+  @include container;
+  display: flex;
+  height: s(445);
+  width: 100%;
+  gap: 0 clamp(s(14), 1.3vw, s(30));
+  position: relative;
+
+  // * link
+  &::after {
+    background: $light-box;
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 10px;
+    width: 70%;
+  }
+}
+
+// * Benefit
+.benefit {
+  z-index: 999;
+  &__top {
+    background: linear-gradient(
+      180deg,
+      #f0f1f6 50%,
+      #ffffff 50%,
+    );
+    padding: 0 clamp(s(14), 1.3vw, s(30));
+  }
+  &__circle {
+    background-color: $dark-box;
+    border-radius: 100px;
+    display: grid;
+    place-items: center;
+    width: clamp(s(52), 5vw, s(83));
+    height: clamp(s(52), 5vw, s(83));
+  }
+  &__text {
+    padding: clamp(s(14), 1.3vw, s(30));
+    padding-bottom: clamp(s(3), 5vw, s(83));
+    background: white;
+    gap: s(16);
+    display: flex;
+    flex-direction: column;
+  }
+  &__para {
+    font-weight: 500;
+  }
+
+  &:nth-child(2) {
+    align-self: center;
+  }
+  &:nth-child(3) {
+    align-self: end;
+  }
+}

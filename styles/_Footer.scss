@@ -1,0 +1,59 @@
+@use "./utils" as *;
+
+.footer {
+  @include container(55);
+  @include flex(flex-start, $justify: space-between);
+  background-color: $dark-bg;
+  &__menu {
+    @include flex(flex-start, $justify: space-between);
+    gap: clamp(s(20), 5vw, s(80));
+    width: 100%;
+    @include tablet {
+      gap: clamp(s(20), 2vw, s(40));
+    }
+  }
+  &__nav {
+    @include flex(flex-start, $justify: space-between);
+    width: fit-content;
+    gap: clamp(s(30), 3.5vw, s(70));
+  }
+
+  &__link {
+    &--header {
+      color: $light-bg;
+      padding-bottom: s(25);
+    }
+    &:not(&--header) {
+      width: max-content;
+      padding-bottom: s(10);
+      font-weight: 500;
+      cursor: pointer;
+      &:hover {
+        color: $footer-hover;
+      }
+    }
+  }
+  &__icons {
+    display: flex;
+    width: max-content;
+    gap: s(25);
+  }
+  &__icon {
+    width: 32px !important;
+    height: 32px !important;
+    color: $light-bg;
+    cursor: pointer;
+    &:hover {
+      color: $footer-hover;
+    }
+  }
+  @include tablet {
+    &__nav {
+      gap: clamp(s(15), 1vw, s(35));
+    }
+  }
+  &__icons {
+    gap: s(5);
+    padding-right: s(5);
+  }
+}

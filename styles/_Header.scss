@@ -2,44 +2,39 @@
 
 // * Header
 .header {
-   width: fit-content;
-   min-height: 100vh;
-   height: max-content;
-   padding: s(55) 0;
-   display: grid;
-   gap: s(70);
+  display: grid;
+  height: max-content;
+  min-height: 100vh;
+  width: fit-content;
+  gap: s(70);
+  padding: s(55) 0;
 }
 // * Nav
 .nav {
-   display: flex;
-   align-items: center;
-   height: s(40);
-   padding: 0 clamp(s(30), 11vw, s(166));
-   
-   &__logo {
-      padding-right: clamp(s(25), 4vw, s(70));
-   }
-   &__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  @include container;
+  @include flex;
+  height: s(40);
+
+  &__logo {
+    padding-right: clamp(s(25), 4vw, s(70));
+  }
+  &__menu {
+    @include flex;
     flex: 1;
   }
   &__links {
-    display: flex;
-    align-items: center;
-    flex: 1;
+    @include flex($justify: flex-start, $flex: 1);
     padding: s(10);
     gap: s(30);
-   }
-   &__link:hover, &__link:focus {
-      cursor: pointer;
-     color: $dark-text;
-   }
+  }
+  &__link:hover,
+  &__link:focus {
+    cursor: pointer;
+    color: $dark-text;
+  }
 
   &__account {
-    display: flex;
-    align-items: center;
+    @include flex;
     gap: s(30);
     width: min-content;
   }
@@ -47,13 +42,13 @@
 
 // * Banner
 .banner {
-  padding-top: 1px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding-left: clamp(s(30), 11vw, s(166));
+  @include flex(flex-start, space-evenly);
+  @include container($r: true);
   height: 100%;
   gap: clamp(s(30), 11vw, s(100));
+  padding-top: 1px;
+  // padding-left: clamp(s(30), 11vw, s(166));
+  padding-right: 0%;
   &__info {
     height: 100%;
     display: flex;

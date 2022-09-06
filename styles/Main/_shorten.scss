@@ -1,0 +1,101 @@
+@use "../utils" as *;
+
+// * Shorten URL
+.shortenURL {
+  width: 100vw;
+}
+// * Form
+.form {
+  background: linear-gradient(180deg, #ffffff 50%, #f0f1f6 50%);
+  display: grid;
+  place-items: center;
+  @include container;
+
+  &__container {
+    @include flex;
+    background: $dark-box url(/images/bg-shorten-desktop.svg);
+    border-radius: 10px;
+    padding: s(55);
+    height: 100%;
+    gap: s(25);
+  }
+
+  &__input {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    position: relative;
+  }
+
+  &__inputField {
+    color: $light-text;
+    border-radius: 10px;
+    border: none;
+    flex: 1;
+    padding-left: s(20);
+    font-size: $text-100;
+
+    &--error {
+      outline: $error 3px solid;
+    }
+
+    &:focus,
+    &:hover {
+      color: $dark-text;
+      outline: $light-box 3px solid;
+    }
+
+    &::placeholder {
+      color: $light-text;
+    }
+  }
+  &__para {
+    display: none;
+
+    &--error {
+      display: block;
+      color: $error;
+      font-weight: 500;
+      position: absolute;
+      bottom: s(-25);
+    }
+  }
+  &__btn {
+    @include btn-pill;
+    border-radius: s(10);
+  }
+}
+// * List
+.list {
+  @include container;
+  margin-top: clamp(s(10),1.6vw, s(30));
+  &__item {
+    @include flex;
+    background: white;
+    margin-bottom:  clamp(s(10),1.3vw, s(20));
+    width: 100%;
+    height: s(70);
+    padding: s(5) s(30);
+    font-size: $text-150;
+  }
+  &__oriAddress {
+    color: $dark-text;
+    flex: 1;
+    font-weight: 500;
+  }
+  &__newAddress {
+    font-weight: 500;
+    color: $light-box;
+  }
+  &__btn {
+    @include btn-pill;
+    border-radius: 10px;
+    padding: 0;
+    width: 100px;
+    height: 40px;
+    margin-left: s(30);
+    &--copied {
+      background: $dark-box;
+    }
+  }
+}
