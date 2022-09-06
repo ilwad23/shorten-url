@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-
+import { Facebook, Instagram, Pinterest, Twitter } from "@mui/icons-material";
 export default function Home() {
   return (
     <div>
@@ -26,7 +26,7 @@ export default function Home() {
               <div className="nav__account">
                 <p className="nav__link nav__login">Login</p>
                 <div className="nav__btn pill-btn">
-                  <p className="nav__link">Sign In</p>
+                  <p className="nav__btn">Sign In</p>
                 </div>
               </div>
             </div>
@@ -55,106 +55,124 @@ export default function Home() {
           </div>
         </header>
         <main className="main">
-          <div className="shorten">
-            <div className="shortenURL__form">
-              <div className="shortenURL__input">
-
-                <input
-                className="shortenURL__input--field"
-                type="text"
-                placeholder="Shorten a link here"
-                />
-                <p className="shortenURL__error">please add a link</p>
+          <div className="shortenURL">
+            <div className="form">
+              <div className="form__container">
+                <div className="form__input">
+                  <input
+                    className={`form__inputField ${
+                      true ? "form__inputField--error":""
+                    }`}
+                    type="text"
+                    placeholder="Shorten a link here..."
+                  />
+                  <p className={`form__para ${true ? "form__para--error":""}`}>
+                    please add a link
+                  </p>
                 </div>
-              <div className="shortenURL__btn box-btn">
-                <p>Shorten it</p>
+                <div className="form__btn box-btn">
+                  <p>Shorten it</p>
+                </div>
               </div>
             </div>
-           <div className="shortenURL__list">
-            <div className="shortenURL__item">
-              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
-              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
-              <div className="shortenURL__btn box-btn">
-                <p>Copy</p>
+            <div className="list">
+              <div className="list__item">
+                <p className="list__oriAddress">
+                  https://www.frontendmentor.io
+                </p>
+                <p className="list__newAddress">https://rel.ink/k4lKyk</p>
+                <div
+                  className={`list__btn ${
+                    false ? "list__btn--copied":""
+                  } box-btn`}
+                >
+                  {false? <p>Copied!</p>:<p>Copy</p>}
+                </div>
+              </div>
+              <div className="list__item">
+                <p className="list__oriAddress">
+                  https://www.frontendmentor.io
+                </p>
+                <p className="list__newAddress">https://rel.ink/k4lKyk</p>
+                <div
+                  className={`list__btn ${
+                    true ? "list__btn--copied":""
+                  } box-btn`}
+                >
+                  {true? <p>Copied!</p>:<p>Copy</p>}
+                </div>
+              </div>
+              <div className="list__item">
+                <p className="list__oriAddress">
+                  https://www.frontendmentor.io
+                </p>
+                <p className="list__newAddress">https://rel.ink/k4lKyk</p>
+                <div
+                  className={`list__btn ${
+                    false ? "list__btn--copied":""
+                  } box-btn`}
+                >
+                  {false? <p>Copied!</p>:<p>Copy</p>}
+                </div>
               </div>
             </div>
-            <div className="shortenURL__item">
-              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
-              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
-              <div className="shortenURL__btn box-btn">
-                <p>Copy</p>
-              </div>
-            </div>
-            <div className="shortenURL__item">
-              <p className="shortenURL__oriAddress">https://www.frontendmentor.io</p>
-              <p className="shortenURL__newAddress">https://rel.ink/k4lKyk</p>
-              <div className="shortenURL__btn box-btn">
-                <p>Copy</p>
-              </div>
-            </div>
-           </div> 
+          </div>
+          <div className="hook">
+            <h2 className="hook__title">Advanced Statistics</h2>
+            <p className="hook__para">
+              Track how your links are performing across the web with our
+              advanced statistics dashboard.
+            </p>
           </div>
           <div className="benefits">
-            <div className="benefits__hook">
-              <h2 className="benefits__title">Advanced Statistics</h2>
-              <p className="benefits__para">
-                Track how your links are performing across the web with our
-                advanced statistics dashboard.
-              </p>
+            <div className="benefit">
+              <div className="benefit__top">
+                <div className="benefit__circle">
+                  <img
+                    src="../images/icon-brand-recognition.svg"
+                    alt="avatar"
+                  />
+                </div>
+              </div>
+              <div className="benefit__text">
+                <h3 className="benefit__title">Brand Recognition</h3>
+                <p className="benefit__para">
+                  Boost your brand recognition with each click. Generic links
+                  don’t mean a thing. Branded links help instil confidence in
+                  your content.
+                </p>
+              </div>
             </div>
-            <div className="benefits__container">
-              <div className="benfit">
-                <div className="benfit__top">
-                  <div className="benfit__circle">
-                    <img
-                      src="../images/icon-brand-recognition.svg"
-                      alt="avatar"
-                    />
-                  </div>
-                </div>
-                <div className="benfit__bottom">
-                  <h3 className="benfit__title">Brand Recognition</h3>
-                  <p className="benfit__para">
-                    Boost your brand recognition with each click. Generic links
-                    don’t mean a thing. Branded links help instil confidence in
-                    your content.
-                  </p>
+            <div className="benefit">
+              <div className="benefit__top">
+                <div className="benefit__circle">
+                  <img src="../images/icon-detailed-records.svg" alt="avatar" />
                 </div>
               </div>
-              <div className="benfit">
-                <div className="benfit__top">
-                  <div className="benfit__circle">
-                    <img
-                      src="../images/icon-detailed-records.svg"
-                      alt="avatar"
-                    />
-                  </div>
-                </div>
-                <div className="benfit__bottom">
-                  <h3 className="benfit__title">Detailed Records</h3>
-                  <p className="benfit__para">
-                    Gain insights into who is clicking your links. Knowing when
-                    and where people engage with your content helps inform
-                    better decisions.
-                  </p>
+              <div className="benefit__text">
+                <h3 className="benefit__title">Detailed Records</h3>
+                <p className="benefit__para">
+                  Gain insights into who is clicking your links. Knowing when
+                  and where people engage with your content helps inform better
+                  decisions.
+                </p>
+              </div>
+            </div>
+            <div className="benefit">
+              <div className="benefit__top">
+                <div className="benefit__circle">
+                  <img
+                    src="../images/icon-fully-customizable.svg"
+                    alt="avatar"
+                  />
                 </div>
               </div>
-              <div className="benfit">
-                <div className="benfit__top">
-                  <div className="benfit__circle">
-                    <img
-                      src="../images/icon-fully-customizable.svg"
-                      alt="avatar"
-                    />
-                  </div>
-                </div>
-                <div className="benfit__bottom">
-                  <h3 className="benfit__title">Fully Customizable</h3>
-                  <p className="benfit__para">
-                    Improve brand awareness and content discoverability through
-                    customizable links, supercharging audience engagement.
-                  </p>
-                </div>
+              <div className="benefit__text">
+                <h3 className="benefit__title">Fully Customizable</h3>
+                <p className="benefit__para">
+                  Improve brand awareness and content discoverability through
+                  customizable links, supercharging audience engagement.
+                </p>
               </div>
             </div>
           </div>
@@ -194,26 +212,15 @@ export default function Home() {
               </div>
             </div>
             <div className="footer__icons">
-              <img
+              {/* <img
                 src="../images/icon-facebook.svg"
                 alt="facebook"
-                className="footer__logo"
-              />
-              <img
-                src="../images/icon-twitter.svg"
-                alt="twitter"
-                className="footer__logo"
-              />
-              <img
-                src="../images/icon-pinterest.svg"
-                alt="pinterest"
-                className="footer__logo"
-              />
-              <img
-                src="../images/icon-instagram.svg"
-                alt="instagram"
-                className="footer__logo"
-              />
+                className="footer__icon"
+              /> */}
+              <Facebook className="footer__icon" />
+              <Twitter className="footer__icon" />
+              <Pinterest className="footer__icon" />
+              <Instagram className="footer__icon" />
             </div>
           </div>
         </footer>
