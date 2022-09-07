@@ -47,8 +47,8 @@
   height: 100%;
   gap: clamp(s(30), 11vw, s(100));
   padding-top: 1px;
-  // padding-left: clamp(s(30), 11vw, s(166));
   padding-right: 0%;
+
   &__info {
     height: 100%;
     display: flex;
@@ -71,4 +71,10 @@
     flex: 1;
     width: 30vw;
   }
+}
+
+@include down-mobile {
+  .nav{
+    @include flex;
+background-color: aquamarine;  }
 }

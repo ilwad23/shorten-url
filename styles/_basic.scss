@@ -1,36 +1,43 @@
 @use "./utils" as *;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 
+h2 {
+  font-size: $text-400;
+  font-weight: 700;
+}
+h3 {
+  font-size: clamp($text-150, $text-300);
+  font-weight: 700;
+}
+h4 {
+  font-size: $text-200;
+  font-weight: 700;
+}
+p {
+  font-size: $text-100;
+  font-weight: 700;
+  color: $light-text;
+}
 @media (min-width: 701px) {
+  :root {
+    --form-bg: url("/images/bg-shorten-desktop.svg");
+    --CTA-bg: url("/images/bg-boost-desktop.svg");
+  }
   .mobile {
     display: none;
   }
 }
-  h2 {
-    font-size: $text-400;
-    font-weight: 700;
-  }
-  h3 {
-    font-size: clamp($text-150,$text-300);
-    font-weight: 700;
-  }
-  h4 {
-    font-size: $text-200;
-    font-weight: 700;
-  }
-  p {
-    font-size: $text-100;
-    font-weight: 700;
-    color: $light-text;
-  }
 @media (max-width: 700px) {
-  h1 {
-    font-size: 1px;
+  :root {
+    --CTA-bg: url("/images/bg-boost-mobile.svg");
+    --form-bg: url("/images/bg-shorten-mobile.svg");
   }
-  .desktop {
+
+  .desktop, .desktop *, .desktop div {
     display: none;
   }
 }
+
 html,
 body,
 .container {
@@ -40,6 +47,20 @@ body,
   color: $dark-text;
 }
 
-.pill-btn {
-  @include btn-pill;
+.btn {
+  display: grid;
+  place-items: center;
+  padding: s(13) s(24);
+  border-radius: s(100);
+  background-color: $light-box;
+  width: max-content;
+  cursor: pointer;
+  p {
+    color: $light-bg;
+    font-weight: 700;
+  }
+  &:hover,
+  &:focus-visible {
+    background-color: $btn-hover;
+  }
 }

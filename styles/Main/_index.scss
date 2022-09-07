@@ -19,8 +19,7 @@
 }
 
 .CTA {
-  background-color: $dark-box;
-  background-image: url(/images/bg-boost-desktop.svg);
+  background: $dark-box var(--CTA-bg);
   background-repeat: no-repeat;
   background-size: 100vw 100%;
   color: $light-bg;
