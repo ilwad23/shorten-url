@@ -9,15 +9,15 @@ export default function Header() {
         <Menu className="nav__menuIcon mobile" />
         <div className="nav__menu desktop">
           <div className="nav__links">
-            <p className="nav__link">Features</p>
-            <p className="nav__link">Pricing</p>
-            <p className="nav__link">Resources</p>
+            <button className="nav__link"><p>Features</p></button>
+            <button className="nav__link"><p>Pricing</p></button>
+            <button className="nav__link"><p>Resources</p></button>
           </div>
           <div className="nav__account">
-            <p className="nav__link nav__login">Login</p>
-            <div className="nav__btn btn">
+            <button className="nav__link"><p>Login</p></button>
+            <button className="nav__btn btn">
               <p className="nav__btn">Sign In</p>
-            </div>
+            </button>
           </div>
         </div>
       </nav>
@@ -28,20 +28,17 @@ export default function Header() {
             Build your brand’s recognition and get detailed insights on how your
             links are performing.
           </h3>
-          <div className="banner__btn btn">
+          <button className="banner__btn btn">
             <p>Get Started</p>
-          </div>
+          </button>
         </div>
+        <div className="banner__imgWrapper">
         <img
-          src="../images/header-desktop-img.svg"
+          src="../images/illustration-working.svg"
           alt="working-illustration"
-          className="banner__img desktop"
-        />
-        <img
-          src="../images/header-mobile-img.svg"
-          alt="working-illustration"
-          className="banner__img mobile"
-        />
+          className="banner__img "
+          />
+          </div>
       </div>
     </header>
   );
