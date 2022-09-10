@@ -24,7 +24,7 @@ $footer-hover: hsla(181, 65%, 53%, 1);
 $error: hsl(0, 87%, 67%);
 // * -- spacing
 $container: clamp(s(20), 11vw, s(166));
-$container-tablet: clamp(s(20), 1.3vw, s(40));
+$container-tablet: clamp(s(20), 3.5vw, s(80));
 // * --- Mixins
 
 @mixin container($y: 0, $r: false) {

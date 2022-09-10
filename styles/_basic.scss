@@ -33,8 +33,10 @@ p {
     --form-bg: url("/images/bg-shorten-mobile.svg");
   }
 
-  .desktop, .desktop *, .desktop div {
-    display: none;
+  .desktop,
+  .desktop *,
+  .desktop div {
+    display: none !important;
   }
 }
 
@@ -43,7 +45,8 @@ body,
 .container {
   width: 100vw;
   height: 100vh;
-  font-family: "Poppins", cursive;
+  font-family: "Poppins", Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS",
+    sans-serif;
   color: $dark-text;
 }
 
@@ -53,14 +56,21 @@ body,
   padding: s(13) s(24);
   border-radius: s(100);
   background-color: $light-box;
+  border: none;
   width: max-content;
   cursor: pointer;
+  transition: all ease-in-out 1ms;
   p {
     color: $light-bg;
     font-weight: 700;
   }
   &:hover,
-  &:focus-visible {
+  &:focus,
+  &:active {
+    border: 0;
+    color: $light-bg;
     background-color: $btn-hover;
+    outline: 3px solid lighten($light-box, 20%);
+    transform: scale(0.97);
   }
 }
