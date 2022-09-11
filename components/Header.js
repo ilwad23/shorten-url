@@ -1,13 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Menu } from "@mui/icons-material";
 
 export default function Header() {
+  const [open, setOpen] = useState(false)
   return (
     <header className="header">
       <nav className="nav">
         <img src="../images/nav-logo.svg" alt="logo" className="nav__logo" />
-        <Menu className="nav__menuIcon mobile" />
-        <div className="nav__menu desktop">
+        <Menu className="nav__menuIcon mobile" onClick={e=>setOpen(!open)}/>
+        <div className={`nav__menu ${!open ?'desktop':""} `} >
           <div className="nav__links">
             <button className="nav__link"><p>Features</p></button>
             <button className="nav__link"><p>Pricing</p></button>

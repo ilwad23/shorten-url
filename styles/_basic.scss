@@ -44,7 +44,7 @@ html,
 body,
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Poppins", Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS",
     sans-serif;
   color: $dark-text;
@@ -64,12 +64,14 @@ body,
     color: $light-bg;
     font-weight: 700;
   }
-  &:hover,
+  &:hover{
+    background-color: $btn-hover;
+    outline: none;
+  }
   &:focus,
   &:active {
     border: 0;
     color: $light-bg;
-    background-color: $btn-hover;
     outline: 3px solid lighten($light-box, 20%);
     transform: scale(0.97);
   }

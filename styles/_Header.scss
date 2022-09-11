@@ -29,6 +29,10 @@
     border: 0;
     outline: 0;
   }
+  &__link:active,
+  &__link:focus {
+    border-bottom: 1px solid $dark-text;
+  }
   &__link:hover,
   &__link:focus {
     cursor: pointer;
@@ -100,7 +104,61 @@
     padding-bottom: s(85);
   }
   .nav {
-    padding: 0 s(30) ;
+    padding: 0;
+    position: relative;
+    margin-right: 30px;
+    margin-left: 30px;
+    &__menu {
+      position: absolute;
+      background: $dark-box;
+      border-radius: 4px;
+      box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.25);
+      z-index: 111;
+      top: 75px;
+      left: 0;
+      gap: s(75);
+      padding: s(45) s(25);
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+    &__links {
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+      gap: s(35);
+      position: relative;
+      &::after {
+        content: "";
+        background-color: $light-text;
+        height: 3px;
+        width: 100%;
+        position: relative;
+        top: 38px;
+      }
+    }
+    &__link {
+      p {
+        font-size: $text-150;
+        color: $light-bg;
+      }
+      &:active, 
+      &:focus {
+        border-bottom: 1px solid $light-text;
+      }
+      &:hover,
+      &:focus {
+        p {
+          color: $light-text !important;
+        }
+      }
+    }
+    &__account {
+      flex-direction: column;
+      width: 100%;
+    }
+    &__btn {
+      width: 100%;
+    }
     &__menuIcon {
       width: s(24) !important;
       height: s(24) !important;
