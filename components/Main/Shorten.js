@@ -49,7 +49,7 @@ export default function Shorten() {
           {true ? <p>Copied!</p> : <p>Copy</p>}
         </div>
       </div>
-      <div className="list__item">
+      <div className="list__item list__item--submit">
         <p className="list__oriAddress">
           https://www.frontendmentor.io
         </p>
