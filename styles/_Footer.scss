@@ -17,7 +17,11 @@
     width: fit-content;
     gap: clamp(s(30), 3.5vw, s(70));
   }
-
+  &__button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+  }
   &__link {
     &--header {
       color: $light-bg;
@@ -25,11 +29,15 @@
     }
     &:not(&--header) {
       width: max-content;
-      padding-bottom: s(10);
+      margin-bottom: s(10);
       font-weight: 500;
       cursor: pointer;
       &:hover {
         color: $footer-hover;
+      }
+      button:focus &,
+      button:active & {
+        border-bottom: 3px solid $footer-hover;
       }
     }
   }
@@ -46,6 +54,10 @@
     &:hover {
       color: $footer-hover;
     }
+    &:focus,
+    &:active {
+      border: 3px solid $footer-hover;
+    }
   }
   @include tablet {
     &__nav {
@@ -55,5 +67,33 @@
   &__icons {
     gap: s(5);
     padding-right: s(5);
+    margin-left: s(20);
+  }
+  @include down-mobile {
+    flex-direction: column;
+    align-items: center;
+    &__menu {
+      align-items: center;
+      flex-direction: column;
+      gap: 0;
+    }
+    &__nav {
+      margin-top: s(50);
+      margin-bottom: s(45);
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__links {
+      display: block;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__icons {
+      gap: s(20);
+    }
   }
 }

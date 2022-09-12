@@ -18,22 +18,22 @@ export default function Footer() {
       <div className="footer__nav">
         <div className="footer__links">
           <p className="footer__link footer__link--header">Features</p>
-          <p className="footer__link">Analytics</p>
-          <p className="footer__link">Link Shortening</p>
-          <p className="footer__link">Branded Links</p>
+          <button className='footer__button'><p className="footer__link">Analytics</p></button>
+          <button className='footer__button'><p className="footer__link">Link Shortening</p></button>
+          <button className='footer__button'><p className="footer__link">Branded Links</p></button>
         </div>
         <div className="footer__links">
           <p className="footer__link footer__link--header">Resources</p>
-          <p className="footer__link">Support</p>
-          <p className="footer__link">Blog</p>
-          <p className="footer__link">Developers</p>
+          <button className='footer__button'><p className="footer__link">Support</p></button>
+          <button className='footer__button'><p className="footer__link">Blog</p></button>
+          <button className='footer__button'><p className="footer__link">Developers</p></button>
         </div>
         <div className="footer__links">
           <p className="footer__link footer__link--header">Company</p>
-          <p className="footer__link">About</p>
-          <p className="footer__link">Our Team</p>
-          <p className="footer__link">Careers</p>
-          <p className="footer__link">Contact</p>
+          <button className='footer__button'><p className="footer__link">About</p></button>
+          <button className='footer__button'><p className="footer__link">Our Team</p></button>
+          <button className='footer__button'><p className="footer__link">Careers</p></button>
+          <button className='footer__button'><p className="footer__link">Contact</p></button>
         </div>
       </div>
       <div className="footer__icons">
