@@ -4,6 +4,7 @@
 // * Shorten URL
 .shortenURL {
   width: 100vw;
+  position: relative;
 }
 // * Form
 .form {
@@ -120,6 +121,7 @@
     }
   }
   .list {
+    z-index: 9999;
     margin-top: s(25);
     padding-right: $container-mobile;
     padding-left: $container-mobile;
@@ -161,9 +163,21 @@
 }
 @keyframes dropdown {
   0% {
-    transform: translateY(-80vw);
+    position: absolute;
+    top: 5%;
+    transform: scale(0.5);
   }
-  100% {
-    transform: translateY(0);
+  40% {
+    position: absolute;
+    top: 25%;
+    transform: scale(0.8);
+
   }
+  60% {
+    position: absolute;
+    top: 75%;
+    transform: scale(0.85);
+
+  }
+
 }
