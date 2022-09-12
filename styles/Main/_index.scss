@@ -8,13 +8,22 @@
 
 .hook {
   @include flex($dir: column);
-  text-align: center;
-  padding: s(90) 0 s(55);
+  padding: s(90) s(115) s(55);
   gap: 35px;
   &__para {
     font-size: $text-150;
     font-weight: 500;
     width: s(500);
+    text-align: center;
+  }
+  @include down-mobile {
+    @include container;
+    margin-top: s(95);
+    margin-bottom: s(55);
+    gap: 25px;
+    &__para {
+      width: 100%;
+    }
   }
 }
 
@@ -29,10 +38,9 @@
   padding: s(60) 0 s(40);
   gap: s(40);
   h2 {
-    font-size:27px;
-    text-align: center;
+    font-size: 27px;
   }
-  @include down-mobile{
+  @include down-mobile {
     gap: s(25);
   }
 }
