@@ -13,7 +13,8 @@ export default function Home() {
       </Head>
       <div className="container">
        <Header/>
-       {/* <Main/>
+       <Main/>
+       {/*
       <Footer/>    */}
       </div>
     </div>

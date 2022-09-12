@@ -8,7 +8,6 @@
   width: 100%;
   gap: 0 clamp(s(14), 1.3vw, s(30));
   position: relative;
-
   // * link
   &::after {
     background: $light-box;
@@ -24,11 +23,7 @@
 .benefit {
   z-index: 999;
   &__top {
-    background: linear-gradient(
-      180deg,
-      #f0f1f6 50%,
-      #ffffff 50%,
-    );
+    background: linear-gradient(180deg, #f0f1f6 50%, #ffffff 50%);
     padding: 0 clamp(s(14), 1.3vw, s(30));
   }
   &__circle {
@@ -50,11 +45,49 @@
   &__para {
     font-weight: 500;
   }
-
   &:nth-child(2) {
     align-self: center;
   }
   &:nth-child(3) {
     align-self: end;
+    background-color: red;
+  }
+}
+@include down-mobile {
+  .benefits {
+    height: 100%;
+    flex-direction: column;
+    gap: s(50);
+    // * link
+    &::after {
+      background: $light-box;
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: calc(50% - 5px);
+      width: 10px;
+      height: 100%;
+    }
+  }
+  .benefit {
+    text-align: center;
+    &__top {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    &__circle {
+      width: s(88);
+      height: s(88);
+    }
+    &__text {
+      padding: s(35) s(30);
+      h3 {
+        font-size: $text-300;
+      }
+      p {
+        font-size: $text-100;
+      }
+    }
   }
 }

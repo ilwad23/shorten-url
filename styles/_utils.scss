@@ -25,20 +25,26 @@ $error: hsl(0, 87%, 67%);
 // * -- spacing
 $container: clamp(s(20), 11vw, s(166));
 $container-tablet: clamp(s(20), 3.5vw, s(80));
+$container-mobile: s(20);
 // * --- Mixins
-
 @mixin container($y: 0, $r: false) {
   $rd2: $container;
   $rt2: $container-tablet;
+  $rt3: $container-mobile;
   @if $r {
     $rd2: 0;
     $rt2: 0;
+    $rt3: 0;
   }
   padding: s($y) $container;
   padding-right: $rd2;
   @include tablet {
     padding: s($y) $container-tablet;
     padding-right: $rt2;
+  }
+  @include down-mobile {
+    padding: s($y) $container-mobile;
+    padding-right: $rt3;
   }
 }
 // * -- displays
