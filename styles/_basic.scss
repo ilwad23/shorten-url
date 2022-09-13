@@ -74,7 +74,7 @@ body,
   }
   &:hover {
     background-color: $btn-hover;
-    outline: none;
+    outline: none !important;
   }
   &:focus,
   &:active {

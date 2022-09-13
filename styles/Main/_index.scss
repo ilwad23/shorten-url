@@ -37,9 +37,7 @@
   margin-top: s(70);
   padding: s(60) 0 s(40);
   gap: s(40);
-  h2 {
-    font-size: 27px;
-  }
+  
   @include down-mobile {
     gap: s(25);
   }

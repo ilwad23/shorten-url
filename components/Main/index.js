@@ -1,6 +1,6 @@
 import React from "react";
 import Benefits from "./Benefits";
-import Shorten from "./shorten";
+import Shorten from "./Shorten";
 
 export default function Main() {
   return (
@@ -16,9 +16,9 @@ export default function Main() {
       <Benefits />
       <div className="CTA">
         <h2 className="CTA__tilte">Boost your links today</h2>
-        <div className="CTA__btn btn">
+        <button className="CTA__btn btn">
           <p>Get Started</p>
-        </div>
+        </button>
       </div>
     </main>
   );
