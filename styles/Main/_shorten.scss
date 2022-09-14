@@ -40,20 +40,23 @@
     flex: 1;
     padding-left: s(20);
     font-size: $text-100;
-
-    &--error {
-      outline: $error 3px solid;
-    }
-
+    
     &:focus,
     &:hover {
       color: $dark-text;
-      outline: $light-box 3px solid;
+      outline: $light-box 1.8px solid;
     }
 
     &::placeholder {
       color: $light-text;
     }
+    &--error {
+      outline: $error 1.8px solid;
+      &::placeholder {
+     opacity: 0.4;   color: $error;
+      }
+    }
+
   }
   &__para {
     display: none;
