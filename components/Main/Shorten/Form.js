@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function Form({
-  oriAddress,
-  setOriAddress,
+  inputValue,
+  setInputValue,
   error,
   errorMessage,
   validateInput,
@@ -14,9 +14,9 @@ export default function Form({
         <div className="form__input">
           <input
             title="Enter url"
-            value={oriAddress}
+            value={inputValue}
             onFocus={(e) => validateInput(e,true)}
-            onChange={(e) => setOriAddress(e.target.value)}
+            onChange={(e) => setInputValue(e.target.value)}
             className={`form__inputField ${
               error ? "form__inputField--error" : ""
             }`}
