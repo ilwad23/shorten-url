@@ -5,7 +5,6 @@ export default function Form({
   setInputValue,
   error,
   errorMessage,
-  validateInput,
   submitURL,
 }) {
   return (
@@ -15,7 +14,7 @@ export default function Form({
           <input
             title="Enter url"
             value={inputValue}
-            onFocus={(e) => validateInput(e,true)}
+            onFocus={(e) => submitURL(e, true)}
             onChange={(e) => setInputValue(e.target.value)}
             className={`form__inputField ${
               error ? "form__inputField--error" : ""
