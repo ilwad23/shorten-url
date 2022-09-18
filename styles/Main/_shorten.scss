@@ -93,6 +93,11 @@
     color: $dark-text;
     flex: 1;
     font-weight: 500;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 30px;
   }
   &__newAddress {
     font-weight: 500;
@@ -109,7 +114,7 @@
       &:hover,
       &:active {
         outline: none !important;
-        border: none ;
+        border: none;
         background: $dark-box;
       }
     }
@@ -150,10 +155,6 @@
     }
     &__oriAddress {
       padding: 0 $container-mobile;
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       padding-bottom: 5px;
       border-bottom: 1px solid $light-bg;
     }
