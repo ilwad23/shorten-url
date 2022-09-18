@@ -6,7 +6,6 @@ export default function Shorten() {
   const [error, setError] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [oriAddress, setOriAddress] = useState("");
-  const [newAddress, setNewAddress] = useState("");
   const [addresses, setAddresses] = useState([]);
 
   // * sets or gets the old and newURL urls
@@ -21,11 +20,12 @@ export default function Shorten() {
   // * submit url and validates it
   function submitURL(e, focus = false) {
     e.preventDefault();
+    let mapOriginalURLs = addresses.map((v) => v.originalURL);
     if (focus) {
       // * remove the error when the input returns to focus
       setError(false);
-    } else if (inputValue === "") {
-      setErrorMessage("please add a link");
+    } else if (mapOriginalURLs.includes(inputValue)) {
+      setErrorMessage("please add a new link");
       setError(true);
     } else if (inputValue === "") {
       setErrorMessage("please add a link");
@@ -43,8 +43,8 @@ export default function Shorten() {
           if (data.ok) {
             setAddresses([
               {
-                  originalURL: oriAddress,
-                  newURL: data?.result?.short_link3,
+                originalURL: oriAddress,
+                newURL: data?.result?.short_link3,
               },
               ...addresses,
             ]);
@@ -52,14 +52,14 @@ export default function Shorten() {
               "addresses",
               JSON.stringify([
                 {
-                    originalURL: oriAddress,
-                    newURL: data?.result?.short_link3,
+                  originalURL: oriAddress,
+                  newURL: data?.result?.short_link3,
                 },
                 ...addresses,
               ])
             );
-            setOriAddress('')
-            setInputValue('')
+            setOriAddress("");
+            setInputValue("");
           } else {
             setErrorMessage("please add a valid link");
             setError(true);
@@ -79,7 +79,7 @@ export default function Shorten() {
         submitURL={submitURL}
       />
       <div className="list">
-        {addresses.map(({ originalURL, newURL}, i) => (
+        {addresses.map(({ originalURL, newURL }, i) => (
           <div className="list__item" key={"item" + i}>
             <p className="list__oriAddress">{originalURL}</p>
             <p className="list__newAddress">{newURL}</p>
