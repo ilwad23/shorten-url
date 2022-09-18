@@ -21,7 +21,7 @@
     --form-bg: url("/images/bg-shorten-mobile.svg");
     --h2-fs: 111px; //,clamp(s(27),2vw,2vw);;
   }
-  
+
   .desktop,
   .desktop *,
   .desktop div {
@@ -29,7 +29,7 @@
   }
   h2 {
     text-align: center;
-    font-size: clamp(s(27),1.8vw,2vw);
+    font-size: clamp(s(27), 1.8vw, 2vw);
     font-weight: 700;
   }
 }
@@ -74,7 +74,7 @@ body,
   }
   &:hover {
     background-color: $btn-hover;
-    outline: none !important;
+    outline: none;
   }
   &:focus,
   &:active {
