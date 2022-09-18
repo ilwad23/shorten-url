@@ -31,8 +31,8 @@
     border-radius: 100px;
     display: grid;
     place-items: center;
-    width: clamp(s(52), 5vw, s(83));
-    height: clamp(s(52), 5vw, s(83));
+    width:  s(83);
+    height:  s(83);
   }
   &__text {
     padding: clamp(s(14), 1.3vw, s(30));
