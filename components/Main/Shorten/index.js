@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 import Form from "./form";
 export default function Shorten() {
   const [errorMessage, setErrorMessage] = useState("please add a link");
@@ -8,7 +9,7 @@ export default function Shorten() {
   const [newAddress, setNewAddress] = useState("");
   const [addresses, setAddresses] = useState([]);
 
-  // * sets or gets the old and new urls
+  // * sets or gets the old and newURL urls
   useEffect(() => {
     if (!localStorage.getItem("addresses")) {
       localStorage.setItem("addresses", JSON.stringify(addresses));
@@ -26,12 +27,15 @@ export default function Shorten() {
     } else if (inputValue === "") {
       setErrorMessage("please add a link");
       setError(true);
+    } else if (inputValue === "") {
+      setErrorMessage("please add a link");
+      setError(true);
     } else {
       setOriAddress(inputValue);
     }
   }
   useEffect(() => {
-    // * gets the new url if valid and puts the old and new url in an object then in an array.
+    // * gets the newURL url if valid and puts the old and newURL url in an object then in an array.
     if (oriAddress !== "")
       fetch(`https://api.shrtco.de/v2/shorten?url=${oriAddress}`)
         .then((res) => res.json())
@@ -39,10 +43,8 @@ export default function Shorten() {
           if (data.ok) {
             setAddresses([
               {
-                addresses: {
-                  origin: oriAddress,
-                  new: data?.result?.short_link3,
-                },
+                  originalURL: oriAddress,
+                  newURL: data?.result?.short_link3,
               },
               ...addresses,
             ]);
@@ -50,15 +52,14 @@ export default function Shorten() {
               "addresses",
               JSON.stringify([
                 {
-                  addresses: {
-                    origin: oriAddress,
-                    new: data?.result?.short_link3,
-                  },
+                    originalURL: oriAddress,
+                    newURL: data?.result?.short_link3,
                 },
                 ...addresses,
               ])
             );
             setOriAddress('')
+            setInputValue('')
           } else {
             setErrorMessage("please add a valid link");
             setError(true);
@@ -78,10 +79,10 @@ export default function Shorten() {
         submitURL={submitURL}
       />
       <div className="list">
-        {addresses.map(({ addresses }, i) => (
+        {addresses.map(({ originalURL, newURL}, i) => (
           <div className="list__item" key={"item" + i}>
-            <p className="list__oriAddress">{addresses.origin}</p>
-            <p className="list__newAddress">{addresses.new}</p>
+            <p className="list__oriAddress">{originalURL}</p>
+            <p className="list__newAddress">{newURL}</p>
             <button
               className={`list__btn ${false ? "list__btn--copied" : ""} btn`}
             >
