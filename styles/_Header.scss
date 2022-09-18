@@ -141,7 +141,7 @@
         font-size: $text-150;
         color: $light-bg;
       }
-      &:active, 
+      &:active,
       &:focus {
         border-bottom: 1px solid $light-text;
       }
@@ -193,6 +193,12 @@
     }
     &__btn {
       transform: scale(1.3);
+      &:hover,
+      &:focus,
+      &:active
+      {
+        transform: scale(1.2);
+      }
     }
     &__imgWrapper {
       width: 100vw;
