@@ -7,7 +7,7 @@
     --h2-fs: $text-400;
   }
   .mobile {
-    display: none;
+    display: none !important;
   }
   h2 {
     font-size: $text-400;
