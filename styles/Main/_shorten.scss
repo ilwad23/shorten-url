@@ -44,14 +44,16 @@
     &:focus,
     &:hover {
       color: $dark-text;
-      outline: $light-box 1.8px solid;
+      outline: none;
+      border: $light-box 1.8px solid;
     }
 
     &::placeholder {
       color: $light-text;
     }
     &--error {
-      outline: $error 1.8px solid;
+      outline: none;
+      border: $error 1.8px solid;
       &::placeholder {
         opacity: 0.4;
         color: $error;

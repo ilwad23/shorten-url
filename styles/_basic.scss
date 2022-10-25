@@ -67,20 +67,32 @@ body,
   border: none;
   width: max-content;
   cursor: pointer;
-  transition: all ease-in-out 1ms;
   p {
     color: $light-bg;
     font-weight: 700;
   }
+  &:focus,
+  &:active,
   &:hover {
     background-color: $btn-hover;
     outline: none;
   }
   &:focus,
   &:active {
-    border: 0;
+    outline: none;
     color: $light-bg;
-    outline: 3px solid lighten($light-box, 20%);
-    transform: scale(0.97);
+    border: 1px solid lighten($light-box, 20%);
+ animation: press 0.2s 1 linear;
+  }
+}
+@keyframes press {
+  0% {
+    transform: scale(0.99);
+  }
+  50% {
+  transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
   }
 }
